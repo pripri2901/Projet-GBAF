@@ -79,7 +79,7 @@ else
                                 <p><label for="author">Pseudo :</label><br />
                                 <input type="text" name="author" id="author"  value="<?php if(isset($author)) echo $author ?>" class="form-control" /></p>
                                 <p><label for="comment">Commentaire :</label><br /></p>
-                                <textarea name="comment" id="comment" cols="30" rows="8" class="form-control"><?php if(isset($comment)) echo $comment ?></textarea></p>
+                                <textarea name="comment" id="comment" cols="30" rows="8" class="form-control"></textarea></p>
                                 <button type="submit" class="btn btn-sucess">Envoyer</button>
                         </form>
                     </div>

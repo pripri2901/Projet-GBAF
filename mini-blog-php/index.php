@@ -14,7 +14,7 @@ $articles = getArticles();
 
     <body>
         <div class="container-fluid">
-            <h1>Articles : </h1>
+            <h1>Présentation du GBAF et du site </h1>
 
             <?php foreach($articles as $article): ?>
                 <h2><?= $article->title ?></h2>
