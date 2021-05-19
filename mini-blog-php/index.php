@@ -18,6 +18,8 @@ $articles = getArticles();
 
         <?php foreach($articles as $article): ?>
             <h2><?= $article->title ?></h2>
+        <time><?= $article->date ?></time>
+        <br /><br />
             <a href="article.php?id=<?= $article->id ?>">Lire la suite</a>
         <?php endforeach; ?>
     </body>
