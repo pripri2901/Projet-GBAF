@@ -34,6 +34,7 @@ else
          }
 
         $article = getArticle($id);
+        $comment = getComments($id);
 
 }
 ?>
@@ -44,35 +45,55 @@ else
     <head>
         <meta charset="utf-8" />
         <title><?= $article->title ?></title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
     </head>
-
+ 
         <body>
+            <a href="index.php">Retour aux articles</a>
 
-            <h1><?= $article->title ?></h1>
-            <time><?= $article->date ?></time>
-            <p><?= $article->content ?></p>
+            <div class="container-fluid">
+                <h1><?= $article->title ?></h1>
+                <time><?= $article->date ?></time>
+                <p><?= $article->content ?></p>
 
-            <hr />
+                <hr />
 
-            <?php
-            if(isset($sucess))
-                echo $sucess;
+                <?php
+                if(isset($sucess))
+                    echo $sucess;
 
-            if(!empty($errors)):?>
+                if(!empty($errors)):?>
 
-                <?php foreach($errors as $error): ?>
-                    <P><?= $error ?></P>
+                    <?php foreach($errors as $error): ?>
+                        < class="row">
+                                <div class="col-md-6">
+                                    <div class="alert alert-danger"><?= $error ?></div>
+                        </div>
+                    <?php endforeach; ?>
+
+                <?php endif; ?>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <form action="article.php?id=<?= $article->id ?>" method="post">
+                                <p><label for="author">Pseudo :</label><br />
+                                <input type="text" name="author" id="author"  value="<?php if(isset($author)) echo $author ?>" class="form-control" /></p>
+                                <p><label for="comment">Commentaire :</label><br /></p>
+                                <textarea name="comment" id="comment" cols="30" rows="8" class="form-control"><?php if(isset($comment)) echo $comment ?></textarea></p>
+                                <button type="submit" class="btn btn-sucess">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+                
+
+                <h2>commentaire :</h2>
+
+                <?php foreach($comment as $com): ?>
+                    <h3><?= $com->author ?></h3>
+                <time><?= $com->date ?></time>
+                <p><?= $com->comment ?></p>
                 <?php endforeach; ?>
-
-            <?php endif; ?>
-
-            <form action="article.php?id=<?= $article->id ?>" method="post">
-                <p><label for="author">Pseudo :</label><br />
-                <input type="text" name="author" id="author" /></p>
-                <p><label for="comment">Commentaire :</label><br /></p>
-                <textarea name="comment" id="comment" cols="30" rows="8"></textarea></p>
-                <button type="submit">Envoyer</button>
-            </form>
-
+            </div>
+            
         </body>
 </html>
