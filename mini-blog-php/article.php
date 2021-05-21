@@ -1,6 +1,6 @@
 <?php
 if(!isset($_GET['id']) OR !is_numeric($_GET['id']))
-    header('Location: index.php');
+    header('Location: accueil.php');
 else
 {
         extract($_GET);
@@ -45,11 +45,14 @@ else
     <head>
         <meta charset="utf-8" />
         <title><?= $article->title ?></title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+
+        
+        <link rel="stylesheet" href="style.css">
+        
     </head>
  
         <body>
-            <a href="index.php">Retour aux articles</a>
+            <a href="accueil.php">Retour aux articles</a>
 
             <div class="container-fluid">
                 <h1><?= $article->title ?></h1>
@@ -65,7 +68,7 @@ else
                 if(!empty($errors)):?>
 
                     <?php foreach($errors as $error): ?>
-                        < class="row">
+                        <div class="row">
                                 <div class="col-md-6">
                                     <div class="alert alert-danger"><?= $error ?></div>
                         </div>
@@ -80,7 +83,7 @@ else
                                 <input type="text" name="author" id="author"  value="<?php if(isset($author)) echo $author ?>" class="form-control" /></p>
                                 <p><label for="comment">Commentaire :</label><br /></p>
                                 <textarea name="comment" id="comment" cols="30" rows="8" class="form-control"></textarea></p>
-                                <button type="submit" class="btn btn-sucess">Envoyer</button>
+                                <button type="submit" >Envoyer</button>
                         </form>
                     </div>
                 </div>
