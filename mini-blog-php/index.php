@@ -1,10 +1,7 @@
-<html>
-<head>
-    <meta http-equiv="content-Type" content="text/html; charset=UTF-8" />
-    <title>Page principale du site</title>
-    <meta name="robots" content="noindex, nofollow">
-    </head>
-    <body>
-    <a href="accueil.php">Espace membre</a>
-    </body>
-</html>
+<?php
+
+include('view/header.php');
+
+include('accueil.php');
+
+include('view/footer.php');

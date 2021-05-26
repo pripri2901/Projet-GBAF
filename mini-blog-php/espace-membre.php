@@ -1,17 +1,35 @@
 <?php
-session_start();
-if (!isset($_SESSION['login'])) {header ('Location: index.php');exit();}
+include('view/header.php');
+include('config/membres.php');
 ?>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Espace membre</title>
-<meta name="robots" content="noindex, nofollow">
-</head>
-<body>
-<p><strong>ESPACE MEMBRES</strong><br/>
-Bienvenue <?php echo htmlentities(trim($_SESSION['login'])); ?> !<br/>
-<a href='deconnexion.php">Déconnexion</a>
-</p>
-</body>
-</html>
+
+
+<h2>Bienvenue dans l'espace membre</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>login</th>
+            <th>password</th>
+        </tr>
+    </thead>    
+    <tbody>
+        
+        <?php foreach(getMembers() as $member) : ?>
+            <tr>
+                <td><?php echo $member['id'] ; ?></td>
+                <td><?php echo $member['login'] ; ?></td>
+                <td><?php echo $member['password'] ; ?></td>
+            </tr>
+        <?php endforeach ?>
+        
+    </tbody>
+
+</table>
+
+
+
+<?php
+    include('view/footer.php');
+?>

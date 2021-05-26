@@ -1,9 +1,11 @@
 <?php
+  require('Connexion.php');
+
 // FONCTION QUI RECUPERE TOUS LES ARTICLES
 function getArticles()
 {
-    require('config/connect.php');
-    $req = $bdd->prepare('SELECT id, title, date FROM articles ORDER BY id DESC');
+    $pdo = getConnection();
+    $req = $pdo->prepare('SELECT * FROM articles ORDER BY id DESC');
     $req->execute();
     $data = $req->fetchALL(PDO::FETCH_OBJ);
     return $data;
@@ -12,7 +14,7 @@ function getArticles()
 //FONCTION QUI RECUPERE UN ARTICLE
 function getArticle($id)
 {
-    require('config/connect.php');
+    $bdd = getConnection();
     $req = $bdd->prepare('SELECT * FROM articles WHERE id = ?');
     $req->execute(array($id));
     if($req->rowCount() == 1)
@@ -33,7 +35,7 @@ function getArticle($id)
 // FONCTION QUI AJOUTE UN COMMENTAIRE EN BDD
 function addComment($articleId, $author, $comment)
 {
-    require('config/connect.php');
+    $bdd = getConnection();
     $req = $bdd->prepare('INSERT INTO comments (articleId, author, comment, date) VALUES
     (?, ?, ?, NOW())');
     $req->execute(array($articleId, $author, $comment));
@@ -42,7 +44,7 @@ function addComment($articleId, $author, $comment)
 // FONCTION QUI RECUPERE LES COMMENTAIRES D'UN ARTICLE
 function getComments($id)
 {
-    require('config/connect.php');
+    $bdd = getConnection();
     $req = $bdd->prepare('SELECT * FROM comments WHERE articleId = ?');
     $req->execute(array($id));
     $data = $req->fetchAll(PDO::FETCH_OBJ);

@@ -9,19 +9,19 @@
     </head>
     <body>
 
-        <div class="formulaire">Inscription à l'espace membre :<br/>
+          <h2 id= 'formulaire' > Inscription à l'espace membre :</h2><br/>
 
         <form action="verification.php" method="post">
            
             
-        <div class="formulaire">
-        &nbsp;&nbsp;login<input type="text" name="login" value=""><br />
+        <div class="inscription">
+        <P>login</P><input type="text" name="login" value=""><br />
 
-            mot de passe&nbsp;<input type="password" name="mdp1" value=""><br />
+          <P>mot de passe</P><input type="password" name="mdp1" value=""><br />
 
-            confirmation mdp<input type="password" name="mdp2" value=""><br />
+            <P>confirmation mdp</P><input type="password" name="mdp2" value=""><br />
 
-            <input type="submit" name"Inscription" value="Inscription">
+            <input type="submit" value="Inscription">
 
         </div>
             
