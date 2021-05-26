@@ -1,6 +1,10 @@
 <?php
 include('view/header.php');
 include('config/membres.php');
+
+include('config/functions.php');
+include('view/header.php');
+$articles = getArticles();
 ?>
 
 
@@ -9,20 +13,33 @@ include('config/membres.php');
 <table>
     <thead>
         <tr>
-            <th>id</th>
-            <th>login</th>
-            <th>password</th>
+        
         </tr>
     </thead>    
     <tbody>
+
+    <a href="Paramètres_du_compte.php">paramètres du compte</a>;
+
+<p class="flotte">
+<img src="img/GBAF.png" alt="logo" />
+</p>
+   <div class="container-fluid">
+       <h1>Présentation du GBAF et du site </h1>
+
+       <h2>acteurs et partenaires</h2><br />
+      
+
+       <?php foreach($articles as $article): ?>
+           <h3><?= $article->title ?></h3>
+           <img class="logo" src="/mini-blog-php/img/<?php echo $article->logo;?>" alt="" width="150">
+           
+       <br /><br />
+           <a href="article.php?id=<?= $article->id ?>">Lire la suite</a>
+       <?php endforeach; ?>
+   </div>
+   
+   <?php include('view/footer.php'); ?>
         
-        <?php foreach(getMembers() as $member) : ?>
-            <tr>
-                <td><?php echo $member['id'] ; ?></td>
-                <td><?php echo $member['login'] ; ?></td>
-                <td><?php echo $member['password'] ; ?></td>
-            </tr>
-        <?php endforeach ?>
         
     </tbody>
 
