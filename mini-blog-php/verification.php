@@ -1,17 +1,22 @@
 <?php
-  
-  include("connexion.php");
+require_once('config/membres.php');
 
-    $login = $_POST['login'] ;
-    $mdp1 = $_POST['mdp1'];
-     $mdp2 = $_POST['mdp2'];
+$login = $_POST['login'];
+$mdp1 = $_POST['mdp1'];
+$mdp2 = $_POST['mdp2'];
 
 
-$pdo = getConnection();
-$sql = "INSERT INTO membres (login, password) VALUES (?,?)";
-$stmt= $pdo->prepare($sql);
-$stmt->execute([$login, $mdp1]);
+if(isset($login) && !empty($login) && isset($mdp1) && !empty($mdp1) && isset($mdp2) && !empty($mdp2) ){
 
-header('Location: http://localhost/mini-blog-php/espace-membre.php');
-exit();
+    $success = inscrire($login, $mdp1);
+    if(success){
+        header('Location: index.php');
+    }else{
+        header('Location: erreur-inscription.php');
+    }
+
+}else{
+    header('Location: erreur-inscription.php');
+}
+
 ?>

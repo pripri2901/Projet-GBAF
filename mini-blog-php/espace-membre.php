@@ -1,14 +1,18 @@
 <?php
 include('view/header.php');
-include('config/membres.php');
+require_once('config/articles.php');
 
-include('config/functions.php');
-include('view/header.php');
+if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
+    header('Location: index.php');
+    exit();
+}
 $articles = getArticles();
+
+
 ?>
 
 
-<h2>Bienvenue dans l'espace membre</p>
+<h2>Bienvenue <?= $_SESSION['user']['login']; ?> dans l'espace membre</h2>
 
 <table>
     <thead>

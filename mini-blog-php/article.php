@@ -1,4 +1,7 @@
 <?php
+require_once("config/articles.php");
+require_once("config/comments.php");
+
 if(!isset($_GET['id']) OR !is_numeric($_GET['id']))
     header('Location: accueil.php');
 else
@@ -6,7 +9,7 @@ else
         extract($_GET);
         $id = strip_tags($id);
 
-        require_once('config/functions.php');
+        require_once('config/articles.php');
 
         if(!empty($_POST))
          {
@@ -52,7 +55,7 @@ else
     </head>
  
         <body>
-            <a href="accueil.php">Retour aux articles</a>
+            <a href="espace-membre.php">Retour aux articles</a>
 
             <div class="container-fluid">
                 <h1><?= $article->title ?></h1>
