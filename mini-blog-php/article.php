@@ -50,7 +50,7 @@ else
         <title><?= $article->title ?></title>
 
         
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/mini-blog-php/css/style.css">
         
     </head>
  
@@ -101,5 +101,9 @@ else
                 <?php endforeach; ?>
             </div>
             
+
+                    <a href="config/action.php?t=1&id=<?= $id ?>"> j'aime </a>
+                    <br />
+                    <a href="config/action.php?t=2&id=<?= $id ?>"> je n'aime pas </a>
         </body>
 </html>

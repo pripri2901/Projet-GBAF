@@ -8,6 +8,8 @@ h1 {
     font-family: 'Roboto', sans-serif;
     color: #0E4145;
     text-decoration: underline;
+    text-align: center;
+
 
 }
 h2 {
@@ -52,8 +54,8 @@ button {
   }
 
   .logo {
-      width: 20%;
-      height: 20%;
+      width: auto;
+      height: auto;
   }
 #formulaire{
     font-family: 'Roboto', sans-serif;
@@ -63,5 +65,50 @@ button {
     color: red;
 }
 .flotte{
-    float: right;
+   position: relative;
+   right: 0;
+}
+header{
+    text-align: center;
+}
+.parametre{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+  text-align: center;
+  
+}
+label{
+    font-family: 'Roboto', sans-serif;
+}
+.en-tête{
+    font-family: 'Roboto', sans-serif;
+}
+#submit{
+    background-color: #ff0000;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 8%;
+    border: 0px solid red;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+.form{
+    font-family: 'Roboto', sans-serif;
+    padding: 14px 25px;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 8%;
+    box-sizing: border-box;
+    border: 2px solid red;
+    text-align: center;
+    width: 50%;
+    margin: auto;
 }

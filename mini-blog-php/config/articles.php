@@ -5,7 +5,7 @@ require_once('connexion.php');
 function getArticles()
 {
     $pdo = getConnection();
-    $req = $pdo->prepare('SELECT * FROM articles ORDER BY id DESC');
+    $req = $pdo->prepare('SELECT * FROM articles'); // where articles.id = membre_article.article_id ORDER BY articles.id DESC
     $req->execute();
     $data = $req->fetchALL(PDO::FETCH_OBJ);
     return $data;

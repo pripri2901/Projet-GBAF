@@ -21,12 +21,10 @@ $articles = getArticles();
         </tr>
     </thead>    
     <tbody>
+    
+    <a href="parametre-du-compte.php">paramètres du compte</a>
 
-    <a href="Paramètres_du_compte.php">paramètres du compte</a>;
 
-<p class="flotte">
-<img src="img/GBAF.png" alt="logo" />
-</p>
    <div class="container-fluid">
        <h1>Présentation du GBAF et du site </h1>
 
@@ -35,12 +33,13 @@ $articles = getArticles();
 
        <?php foreach($articles as $article): ?>
            <h3><?= $article->title ?></h3>
-           <img class="logo" src="/mini-blog-php/img/<?php echo $article->logo;?>" alt="" width="150">
+           <img class="logo" src="/mini-blog-php/img/<?php echo $article->logo;?>" alt="">
            
        <br /><br />
            <a href="article.php?id=<?= $article->id ?>">Lire la suite</a>
        <?php endforeach; ?>
-   </div>
+       </div>
+   
    
    <?php include('view/footer.php'); ?>
         
