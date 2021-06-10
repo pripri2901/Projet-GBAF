@@ -1,25 +1,47 @@
+
 <?php
-    $pdo = new PDO('mysql:host=localhost;dbname=GBAF;charset=utf8','root','root');
+session_start();
 
-    if(isset($_GET['t'],$_GET['id']) AND !empty($_GET['t']) AND !empty($_GET ['id'])) {
-        $getid = (int) $_GET['id'];
-        $gett = (int) $_GET['t'];
+include('articles.php');
+include('likes.php');
 
-        $check = $bdd->prepare('SELECT id FROM articles where id = ?');
-        $check->execute(array($getid));
 
-        if($check->rowCount() == 1) {
-            if($gett == 1) {
-                $ins = $bdd->prepare('INSERT INTO likes (id_article) VALUES (?)');
-                $ins->execute(array($getid));
-            } elseif($gett == 2){
-                $ins = $bdd->prepare('INSERT INTO dislikes (id_article) VALUES (?)');
-                $ins->execute(array($getid));
-            }
-             header('location: http://localhost/mini-blog-php/article.php?id='.$getid);
-        } else {
-            exit ('Erreur fatale');
-        }
-    } else {
-        exit ('Erreur fatale. <a href="http://localhost/mini-blog-php/article/">Revenir à l\'accueil');
-    }
+if(isset($_GET['t'],$_GET['id']) AND !empty($_GET['t']) AND !empty($_GET ['id'])) {
+   $getid = (int) $_GET['id'];
+   $gett = (int) $_GET['t'];
+
+   //Je récupère l'id de l'user courant connecté.
+   $idConnectedUser = $_SESSION['user']['id'];
+   
+   //récupération de l'article en base qui va recevoir un like ou un dislike
+   $article = getArticle($getid);
+
+
+   //si je recupéère bien un article.
+   if(!empty($article)) {
+
+      // si gett == 1 alors c'est un like
+      if($gett == 1) {
+         //A déjà liké ou non.
+         $aDejaUnlike =  aDejaUnLikeSurLarticle($article->id, $idConnectedUser);
+
+         //S'il n'y a pas déjà un like alors je peux en rajouter un 
+         if(!$aDejaUnlike){
+            ajouteUnLikeALarticle($article->id, $idConnectedUser);
+         }
+
+
+      // si gett == 2 alors c'est un dislike
+      } elseif($gett == 2){
+         $aDejaUnDislike = aDejaUnDislikeSurLarticle($article->id, $idConnectedUser);
+
+         //S'il n'y a pas déjà un disike alors je peux en rajouter un 
+         if(!$aDejaUnDislike){
+            ajouteUnDislikeALarticle($article->id, $idConnectedUser);
+         }
+      }
+      header('location: http://localhost/mini-blog-php/article.php?id='.$getid);
+   }
+} else {
+   exit ('Erreur fatale. <a href="http://localhost/mini-blog-php/article/">Revenir à l\'accueil');
+}

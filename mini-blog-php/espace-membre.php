@@ -12,7 +12,8 @@ $articles = getArticles();
 ?>
 
 
-<h2>Bienvenue <?= $_SESSION['user']['login']; ?> dans l'espace membre</h2>
+<h4>Bienvenue <?= $_SESSION['user']['login']; ?> dans l'espace membre</h4>
+
 
 <table>
     <thead>
@@ -22,13 +23,13 @@ $articles = getArticles();
     </thead>    
     <tbody>
     
-    <a href="parametre-du-compte.php">paramètres du compte</a>
+   
 
 
    <div class="container-fluid">
        <h1>Présentation du GBAF et du site </h1>
 
-       <h2>acteurs et partenaires</h2><br />
+       <h2>Acteurs et partenaires</h2><br />
       
 
        <?php foreach($articles as $article): ?>

@@ -1,6 +1,7 @@
 <?php
 require_once("config/articles.php");
 require_once("config/comments.php");
+require_once("config/likes.php");
 
 if(!isset($_GET['id']) OR !is_numeric($_GET['id']))
     header('Location: accueil.php');
@@ -37,6 +38,8 @@ else
          }
 
         $article = getArticle($id);
+        $nombreDeLike = getNombreLikePourArticle($id);
+        $nombreDeDislike = getNombreDislikePourArticle($id);
         $comment = getComments($id);
 
 }
@@ -56,9 +59,10 @@ else
  
         <body>
             <a href="espace-membre.php">Retour aux articles</a>
-
+        
             <div class="container-fluid">
                 <h1><?= $article->title ?></h1>
+                <img src="img/<?php echo $article->logo;?>">
                 <time><?= $article->date ?></time>
                 <p><?= $article->content ?></p>
 
@@ -78,18 +82,8 @@ else
                     <?php endforeach; ?>
 
                 <?php endif; ?>
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <form action="article.php?id=<?= $article->id ?>" method="post">
-                                <p><label for="author">Pseudo :</label><br />
-                                <input type="text" name="author" id="author"  value="<?php if(isset($author)) echo $author ?>" class="form-control" /></p>
-                                <p><label for="comment">Commentaire :</label><br /></p>
-                                <textarea name="comment" id="comment" cols="30" rows="8" class="form-control"></textarea></p>
-                                <button type="submit" >Envoyer</button>
-                        </form>
-                    </div>
                 </div>
+                
                 
 
                 <h2>commentaire :</h2>
@@ -100,10 +94,24 @@ else
                 <p><?= $com->comment ?></p>
                 <?php endforeach; ?>
             </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <form action="article.php?id=<?= $article->id ?>" method="post">
+                                <p><label for="author">Pseudo :</label><br />
+                                <input type="text" name="author" id="author"  value="<?php if(isset($author)) echo $author ?>" class="form-control" /></p>
+                                <p><label for="comment">Commentaire :</label><br /></p>
+                                <textarea name="comment" id="comment" cols="30" rows="8" class="form-control"></textarea></p>
+                                <button type="submit" >Envoyer</button>
+                        </form>
+                       </br>
+                        <a href="config/action.php?t=1&id=<?= $id ?>"> j'aime </a> <?php echo $nombreDeLike ; ?> !
+                    
+                        <a href="config/action.php?t=2&id=<?= $id ?>"> je n'aime pas </a> <?php echo $nombreDeDislike ; ?> !
+                    </div>
+               
             
 
-                    <a href="config/action.php?t=1&id=<?= $id ?>"> j'aime </a>
-                    <br />
-                    <a href="config/action.php?t=2&id=<?= $id ?>"> je n'aime pas </a>
+                   
         </body>
 </html>

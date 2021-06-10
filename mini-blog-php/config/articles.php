@@ -14,21 +14,14 @@ function getArticles()
 //FONCTION QUI RECUPERE UN ARTICLE
 function getArticle($id)
 {
+    
     $bdd = getConnection();
     $req = $bdd->prepare('SELECT * FROM articles WHERE id = ?');
     $req->execute(array($id));
-    if($req->rowCount() == 1)
-    {
-       $data = $bdd->prepare('SELECT*FROM articles WHERE id = ?');
-       $req->execute(array($id));
-       if($req->rowCount() == 1)
-        {
-            $data = $req->fetch(PDO::FETCH_OBJ);
-            return $data;
-        }
-
+    $article = $req->fetchALL(PDO::FETCH_OBJ);
+    if(!empty($article)){
+        return $article[0];
+    }else{
+        return null;
     }
-    else
-        header('Location:index.php');
-    $req->closecursor();
 }
