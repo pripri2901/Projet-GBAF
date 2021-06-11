@@ -43,6 +43,7 @@ Même s’il existe une forte concurrence entre ces entités, elles vont toutes 
 Le GBAF est le représentant de la profession bancaire et des assureurs sur tous les axes de la réglementation financière française. Sa mission est de promouvoir l'activité bancaire à l’échelle nationale. C’est aussi un interlocuteur privilégié des pouvoirs publics.
 </p>
     </div>
+<div class="parametre">
        <h2>Acteurs et partenaires</h2><br />
       
 
@@ -55,8 +56,9 @@ Le GBAF est le représentant de la profession bancaire et des assureurs sur tous
        <?php endforeach; ?>
     
    
+       </div>
    
-   <?php include('view/footer.php'); ?>
+   
         
         
     </tbody>

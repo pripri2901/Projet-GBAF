@@ -54,6 +54,7 @@ else
 
         
         <link rel="stylesheet" href="/mini-blog-php/css/style.css">
+        <script src="https://kit.fontawesome.com/4ad5f15a4f.js" crossorigin="anonymous"></script>
         
     </head>
  
@@ -105,9 +106,9 @@ else
                                 <button type="submit" >Envoyer</button>
                         </form>
                        </br>
-                        <a href="config/action.php?t=1&id=<?= $id ?>"> j'aime </a> <?php echo $nombreDeLike ; ?> !
+                        <a href="config/action.php?t=1&id=<?= $id ?>"> <i class="fas fa-thumbs-up"></i> </a> <?php echo $nombreDeLike ; ?> !
                     
-                        <a href="config/action.php?t=2&id=<?= $id ?>"> je n'aime pas </a> <?php echo $nombreDeDislike ; ?> !
+                        <a href="config/action.php?t=2&id=<?= $id ?>"> <i class="fas fa-thumbs-down"></i></a> <?php echo $nombreDeDislike ; ?> !
                     </div>
                
             
