@@ -26,11 +26,14 @@ h3 {
 h4 {
     font-family: 'Montserrat', sans-serif;
     color: #000000;
-    text-align: center;
+    text-align: left;
+    font-size: 15px;
+    text-align: unset;
 }
 
-p{
-    font-family: 'Montserrat', sans-serif;
+.paragraphe{
+    font-family: 'Roboto', sans-serif;
+    
 }
 
 button {
@@ -117,4 +120,10 @@ label{
     text-align: center;
     width: 50%;
     margin: auto;
+}
+.pieds{
+    margin-left: 1000px
+}
+.mention{
+    text-align: center;
 }
