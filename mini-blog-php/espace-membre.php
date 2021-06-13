@@ -11,9 +11,6 @@ $articles = getArticles();
 
 ?>
 
-<div class=Nom>
-<h4>Bienvenue <?= $_SESSION['user']['login']; ?> dans l'espace membre</h4>
-</div>
 
 <table>
     <thead>
@@ -44,7 +41,7 @@ Même s’il existe une forte concurrence entre ces entités, elles vont toutes 
 Le GBAF est le représentant de la profession bancaire et des assureurs sur tous les axes de la réglementation financière française. Sa mission est de promouvoir l'activité bancaire à l’échelle nationale. C’est aussi un interlocuteur privilégié des pouvoirs publics.
 </p>
     </div>
-<div class="parametre">
+<div class="Bordure">
        <h2>Acteurs et partenaires</h2><br />
       
 

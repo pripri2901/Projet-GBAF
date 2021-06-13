@@ -12,20 +12,22 @@ include('view/header.php');
     
   </head>
   <body>
-    <div class=contact>
-      <h2>Contact</h2>
-    <form class=formulaire>
-      <label >Pseudo</label>
+    <div class=container>
+      <div class=titreForm>
+    Contact
+      </div><br>
+    <form >
+      <label class="aligne">Pseudo</label>
       <input type="text" name="login">
       <br>
-      <label>Email</label>
+      <label class="aligne">Email</label>
       <input type="Email" name="email">
       <br>
-      <label>Objet</label>
-      <input type="Objet" name="objet">
+      <label class="aligne">Objet</label>
+      <input type="text" name="objet">
       <br>
-      <label>Votre message</label>
-      <input type="Votre message" name="message">
+      <label class="aligne">Votre message</label>
+      <input type="text" name="message">
       </form>
       </br>
       <button type="submit" >Envoyer</button>

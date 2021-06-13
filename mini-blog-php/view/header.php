@@ -1,6 +1,9 @@
 <?php session_start(); ?>
 <html>
-<head>
+<head> 
+    <div class=Nom>
+<h4>connecté en tant que <?= $_SESSION['user']['login']; ?></h4>
+</div>
     <meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
     <title>Page principale du site</title>
     <meta name="robots" content="noindex, nofollow">
