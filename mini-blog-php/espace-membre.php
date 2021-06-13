@@ -11,12 +11,13 @@ $articles = getArticles();
 
 ?>
 
-
+<div class=Nom>
 <h4>Bienvenue <?= $_SESSION['user']['login']; ?> dans l'espace membre</h4>
-
+</div>
 
 <table>
     <thead>
+    <link rel="stylesheet" href="/mini-blog-php/css/style.css">
         <tr>
         
         </tr>
@@ -52,7 +53,9 @@ Le GBAF est le représentant de la profession bancaire et des assureurs sur tous
            <img class="logo" src="/mini-blog-php/img/<?php echo $article->logo;?>" alt="">
            
        <br /><br />
+        <div class=LLS>
            <a href="article.php?id=<?= $article->id ?>">Lire la suite</a>
+           </div>
        <?php endforeach; ?>
     
    

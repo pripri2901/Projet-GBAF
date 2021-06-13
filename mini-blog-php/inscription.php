@@ -4,6 +4,7 @@ include('view/header.php');
 
     <form action="verification.php" method="post">
       <div class="form">
+          <div class=formulaire>
         <label>Login</label>
         <input type="text" name="login">
         <br>
@@ -14,7 +15,7 @@ include('view/header.php');
         <input type="password" name="mdp2">
         
 
-        <div class="form-input form-group">
+        <div class="QuestionS">
               <label for="question">Question secrète</label>
               <select class="form-input form-select form-control" id="question" name="question" required>
                 <option value="">--- Selectionner une question ---</option>
@@ -34,8 +35,9 @@ include('view/header.php');
                 </p>
                 <input type="submit" value="Enregistrer">
     </form>
+      </div>
     </div>
-
+    
 <?php
 include('view/footer.php');
 ?>

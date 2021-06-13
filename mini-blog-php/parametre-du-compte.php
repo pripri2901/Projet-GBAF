@@ -1,23 +1,24 @@
 <?php include('view/header.php') ;?>
   
     <main>
-      <form class="parametre" action="valid_modif_parametres.php" method="post">
-                <div class="card border-primary mb-3">
-          <div class="en-tête">Paramètres du compte</div>
-            <p class="texte">
-              <label for="username">Username</label>
+      <form class="parametre">
+
+            
+              <label class="aligne">Pseudo</label>
               <input class="form-input form-control" value="<?= $_SESSION['user']['login']; ?>" required>
-            </p>
-            <p class="texte">
-              <label for="password">Password</label>
+            
+
+
+           
+              <label class="aligne">Mot de passe</label>
               <input class="form-input form-control" type="password" name="password" id="password" required>
               <label for="checkbox">
               <input type="checkbox" id="checkbox">
               Afficher le mot de passe
-              </label>
-            </p>
+              
+           
             <div class="Questionnaire">
-              <label for="question">Question secrète</label>
+              <label class="aligne">Question secrète</label>
               <select class="Choix multiple" id="question" name="question" required>
                 <option value="">--- Selectionner une question ---</option>
                 <option value="Quel est le nom de mon premier animal domestique ?" selected>Votre question : Quel est le nom de mon premier animal domestique ?</option>
@@ -28,10 +29,9 @@
                 <option value ="Quelle est votre couleur préférée ?">Quelle est votre couleur préférée ?</option>
                 <option value ="Quelle est votre équipe sportive favorite ?">Quelle est votre équipe sportive favorite ?</option>
                 <option value ="Quel était le métier de votre grand-père ?">Quel était le métier de votre grand-père ?</option>
-              </select>
-            </div>
+              </select></div>
             <p class="texte">
-              <label for="reponse">Réponse</label>
+              <label class="aligne">Réponse</label>
               <input class="form-input form-control" type="text" id="reponse" name="reponse" value="" required>
             </p>
             <input type="hidden" name="account" value="32">
@@ -42,7 +42,9 @@
           </div>
         </div>
       </form>
-      <div class="push"></div>
     </main>
   </body>
+  <?php
+    include('view/footer.php');
+?>
 </html>

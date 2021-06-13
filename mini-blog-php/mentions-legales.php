@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<br>
-  <head>
-    <meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
-    <title>Mentions l'égales </title>
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="/mini-blog-php/css/style.css">
-    
-  </head>
+<?php
+include('view/header.php');
+?>
   <br>
       <h2>Mentions l'égales</h2>
       <div class=mentions>
@@ -20,5 +14,7 @@
   </div>
   <a href="espace-membre.php" class="btn btn-link">Annuler</a>
   </body>
-
+  <?php
+    include('view/footer.php');
+?>
 </html>
