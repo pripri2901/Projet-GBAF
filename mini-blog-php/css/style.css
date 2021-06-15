@@ -51,6 +51,19 @@ label{
 
 .en-tête{
     font-family: 'Roboto', sans-serif;
+
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    line-height: 25px;
+}
+hr{
+    border: 0px;
+    margin-bottom: 10px;
+}
+.article {
+  display:inline-block;
+    float:right;
 }
 /*Boutton*/
 button {
@@ -88,7 +101,6 @@ button {
     font-family: 'Roboto', sans-serif;
     margin-bottom: 8%;
     border: 0px solid red;
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
   a:hover, a:active {

@@ -53,6 +53,7 @@ Le GBAF est le représentant de la profession bancaire et des assureurs sur tous
         <div class=LLS>
            <a href="article.php?id=<?= $article->id ?>">Lire la suite</a>
            </div>
+           <hr>
        <?php endforeach; ?>
     
    

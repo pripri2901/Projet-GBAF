@@ -15,26 +15,25 @@
 
            
               <label class="aligne">Mot de passe</label>
-              <input class="form-input form-control" type="password" name="password" id="password" required>
+              <input class="mdp" type="password" name="password" id="password" required>
               <br>
             
            
             
               <label class="aligne">Question secrète</label>
               <select class="Choix multiple" id="question" name="question" required>
-                <option value="1">--- Selectionner une question ---</option>
-                <option value="Quel est le nom de mon premier animal domestique ?" selected>Votre question : Quel est le nom de mon premier animal domestique ?</option>
-                <option value="Quel est le nom de mon premier animal domestique ?">Quel est le nom de mon premier animal domestique ?
-                <option value="Quel est le nom du pays que j’aimerais le plus visiter ?">Quel est le nom du pays que j’aimerais le plus visiter ?
-                <option value="Quel est le nom du personnage historique que j’admire le plus ?">Quel est le nom du personnage historique que j’admire le plus ?
-                <option value="Quelle est la  marque du premier véhicule que j’ai conduit ?">Quelle est la  marque du premier véhicule que j’ai conduit ?
-                <option value ="Quelle est votre couleur préférée ?">Quelle est votre couleur préférée ?</option>
-                <option value ="Quelle est votre équipe sportive favorite ?">Quelle est votre équipe sportive favorite ?</option>
-                <option value ="Quel était le métier de votre grand-père ?">Quel était le métier de votre grand-père ?</option>
+                <option value="0">--- Selectionner une question ---</option>
+                <option value="1"> Quel est le nom de mon premier animal domestique ?</option>
+                <option value="3">Quel est le nom du pays que j’aimerais le plus visiter ?</option>
+                <option value="4">Quel est le nom du personnage historique que j’admire le plus ?</option>
+                <option value="5">Quelle est la  marque du premier véhicule que j’ai conduit ?</option>
+                <option value ="6">Quelle est votre couleur préférée ?</option>
+                <option value ="7">Quelle est votre équipe sportive favorite ?</option>
+                <option value ="8">Quel était le métier de votre grand-père ?</option>
               </select></br>
             
               <label class="aligne">Réponse</label>
-              <input class="form-input form-control" type="text" id="reponse" name="reponse" value="" required>
+              <input class="réponse" type="text" id="réponse" name="réponse" value="" required>
             
             <input type="hidden" name="account" value="32">
             <ul class="account center">

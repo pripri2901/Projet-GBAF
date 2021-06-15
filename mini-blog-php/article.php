@@ -63,7 +63,7 @@ else
         
             <div class="container-fluid">
                 <h1><?= $article->title ?></h1>
-                <img src="img/<?php echo $article->logo;?>">
+                <img class=article src="img/<?php echo $article->logo;?>">
                 <time><?= $article->date ?></time>
                 <p><?= $article->content ?></p>
 
