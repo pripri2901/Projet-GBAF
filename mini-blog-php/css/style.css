@@ -79,19 +79,20 @@ hr{
   display:inline-block;
 }
 
-
-  a:link, a:visited {
-    background-color: Red;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 3%;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+a{
+  color: darkred;
+  text-align: center;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 3%;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+  a:visited {
+    color: rgb(56, 52, 52);
+  }
+  a:hover, a:active {
+    color: black;
   }
   
   #submit{
@@ -106,9 +107,6 @@ hr{
     border: 0px solid red;
     font-size: 16px;
 }
-  a:hover, a:active {
-    background-color: red;
-  }
   .article{
     margin-bottom: 50%;
   }
