@@ -18,7 +18,7 @@
    
     <a href="espace-membre.php">Liste des acteurs</a>
     <?php if(isset($_SESSION['user']) && !empty($_SESSION['user'])) : ?>
-        <a href="parametre-du-compte.php">Paramètre</a>
+        <a href="parametre-du-compte.php">Paramètres</a>
         <a href="deconnexion.php">Déconnexion</a>
     <?php endif; ?>
 </div>

@@ -36,7 +36,7 @@
                     <input class="réponse" type="text" id="réponse" name="réponse" value="" required>
                 
                 <input type="submit" value="Enregistrer">
-                <a href="espace-membre.php" class="btn btn-link">Retour</a>
+                <button href="espace-membre.php" class="btn btn-link">Retour</button>
     </form>
           </div>  
           
