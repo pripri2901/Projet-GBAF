@@ -1,38 +1,39 @@
-<?php include('view/header.php') ;?>
-  
-
 <?php
+
+
 include('config/membres.php');
 
-if(isset($_POST['password']) && !empty($_POST['password'])){
-  $login = $_SESSION['user']['login'];
-  $mdp = $_POST['password'];
+if(isset($_POST['login'], $_POST['question'], $_POST['response']) && !empty($_POST['login']) && !empty($_POST['question']) && !empty($_POST['response'])){
+  $login = $_POST['login'];
   $question = $_POST['question'];
   $response = $_POST['response'];
-  modification($login, $mdp, $question,$response);
+  $mdp = $_POST['mdp'];
+  modification($login,$mdp, $question,$response);
 }
 
 ?>
-
     <main>
+    <link rel="stylesheet" href="/mini-blog-php/css/style.css">
+            <p class="flotte">
+                <img src="img/GBAF.png" alt="logo" />
+            </p>
       <div class="container">
         <div class="titreForm">
-          Paramètre du compte
+          Mot de passe oublié
           </div><br>
-      <form method="post">
+      <form method="post" >
 
             
               <label class="aligne">Pseudo</label>
-              <input class="form-input form-control" type="text" value="<?= $_SESSION['user']['login']; ?>" required>
+              <input class="form-input form-control" type="text" name="login" required>
             <br>
 
+            <label class="aligne">Nouveau mot de passe</label>
+              <input class="form-input form-control" type="password" name="mdp" required>
+            <br>
 
            
-              <label class="aligne">Mot de passe</label>
-              <input class="mdp" type="password" name="password" id="password" required>
-              <br>
             
-           
             
               <label class="aligne">Question secrète</label>
               <select class="Choix multiple" id="question" name="question" required>

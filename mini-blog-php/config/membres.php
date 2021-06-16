@@ -28,18 +28,19 @@ function seConnecter($login, $mdp){
 }
 
 /*QUESTION SECRETE & MODIFICATION DE MDP*/
-function récupération($login) {
+function récupération($login, $question,$response){
     $pdo = getConnection();
-    $sql = "SELECT * from membres where login =?";
+    $sql = "SELECT * from membres where login =? AND  question=? AND réponse=?";
     $query= $pdo->prepare($sql);
-    return $query->execute([$login]);
+    $result =  $query->execute([$login, $question, $response]);
+    var_dump($result);die();
 }
 
 function modification($login, $mdp , $question , $response){
     $pdo = getConnection();
-    $sql = "UPDATE membres SET mdp=? WHERE login=? AND question=? AND response=?";
+    $sql = "UPDATE membres SET password=? WHERE login=? AND question=? AND réponse=?";
     $query = $pdo->prepare($sql);
-    return $query->execute([$login , md5($mdp) , $question , $response]);
+    $result =  $query->execute([md5($mdp) , $login , $question , $response]);
 }
 
 

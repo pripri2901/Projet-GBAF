@@ -60,6 +60,7 @@ function aDejaUnDislikeSurLarticle($articleId, $idConnectedUser)
 
 }
 
+  // Limite de like
 function getNombreLikePourArticle($articleId){
     $pdo = getConnection();
     $req = $pdo->prepare('SELECT * FROM likes WHERE id_article = :id_article');
@@ -72,7 +73,7 @@ function getNombreLikePourArticle($articleId){
     return $nombreArticles;
     
 }
-
+  // Limite de like
 function getNombreDislikePourArticle($articleId){
     $pdo = getConnection();
     $req = $pdo->prepare('SELECT * FROM dislikes WHERE id_article = :id_article');

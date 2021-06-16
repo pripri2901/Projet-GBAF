@@ -15,9 +15,8 @@
     <img src="img/GBAF.png" alt="logo" />
     </p>
 <div>
-    <a href="index.php">Accueil</a>
-    <a href="espace-membre.php">Espace membre</a>
-    <a href="inscription.php">Inscription</a>
+   
+    <a href="espace-membre.php">Liste des acteurs</a>
     <?php if(isset($_SESSION['user']) && !empty($_SESSION['user'])) : ?>
         <a href="parametre-du-compte.php">Paramètre</a>
         <a href="deconnexion.php">Déconnexion</a>

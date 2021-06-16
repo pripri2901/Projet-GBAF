@@ -57,13 +57,14 @@ else
         <script src="https://kit.fontawesome.com/4ad5f15a4f.js" crossorigin="anonymous"></script>
         
     </head>
- 
+            
         <body>
+
             <a href="espace-membre.php">Retour aux articles</a>
         
             <div class="container-fluid">
+            
                 <h1><?= $article->title ?></h1>
-                <img class=article src="img/<?php echo $article->logo;?>">
                 <time><?= $article->date ?></time>
                 <p><?= $article->content ?></p>
 

@@ -11,8 +11,9 @@
         <input type="text" name="login" value=""><br />
         <label class="aligne">mot de passe</label>
         <input type="password" name="mdp" value=""><br />
-        <input type="submit" name="connexion" value="connexion" action="se-connecter.php">
-        <a href="inscription.php">inscription</a>
+        <button type="submit" name="connexion" action="se-connecter.php">Connexion</button>
+        <button href="inscription.php">inscription</button>
+        <button class=mdp href="mdp-oublier.php">mot de passe oublié</button>
     </form>
     </div>
 </div>

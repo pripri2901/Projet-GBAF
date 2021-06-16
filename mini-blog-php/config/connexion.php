@@ -1,6 +1,6 @@
 <?php
 
-
+// CONNEXION A LA BDD
 function getConnection(){
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=GBAF;charset=utf8','root','root');
